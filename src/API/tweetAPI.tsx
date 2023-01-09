@@ -1,5 +1,5 @@
 
-type TypeTweet = {
+export type TypeTweet = {
   id: number,
   tweetContent: {
     imageUrl: string,

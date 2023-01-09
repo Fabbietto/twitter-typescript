@@ -1,5 +1,4 @@
 import './User.css'
-import React from "react"
 import Avatar from "../Avatar/Avatar"
 
 const User = (props) => {

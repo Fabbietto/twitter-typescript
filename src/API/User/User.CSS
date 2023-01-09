@@ -1,0 +1,22 @@
+
+.Names{
+    text-align: left;
+    margin-left: 10px;
+}
+
+
+.User{
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+h6{
+    color: rgb(133, 130, 130);
+}
+
+
+.User-name{
+    margin-bottom: -20px;
+}

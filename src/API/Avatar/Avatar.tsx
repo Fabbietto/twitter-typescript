@@ -1,7 +1,16 @@
 import "./Avatar.css";
 
+type avatartipo = {
+  name : string;
+  nickname: string;
+  avatarUrl: string;
+}
 
-const Avatar = (props) => {
+type AvatarProps = {
+  user:avatartipo;
+}
+
+const Avatar = (props:AvatarProps) => {
     return (
     <img
     className="Avatar"

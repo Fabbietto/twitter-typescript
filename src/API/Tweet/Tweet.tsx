@@ -2,8 +2,17 @@ import { TweetContent } from "../TweetContent/TweetContent";
 import User from "../User/User" 
 import './Tweet.css'
 import {FaToilet} from 'react-icons/fa'
+import { TypeTweet } from "../tweetAPI";
+import { MouseEventHandler } from "react";
 
-const Tweet = (props) => {
+type TweetProp = {
+  tweet:TypeTweet;
+  aggiungiLike: MouseEventHandler<HTMLButtonElement>;
+  elimina: MouseEventHandler<HTMLButtonElement>;
+
+}
+
+const Tweet = (props: TweetProp) => {
 
 
   return (

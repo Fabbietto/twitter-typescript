@@ -1,8 +1,16 @@
 import React from "react";
 import Tweet from "../Tweet/Tweet";
+import { TypeTweet } from "../tweetAPI";
 import './TweetList.css'
 
-const TweetList = (props) => {
+type TweetListProp = {
+  lista:TypeTweet[];
+  elimina: (index: number) => void;
+  aggiungiLike: (index: number) => void;
+}
+
+
+const TweetList = (props:TweetListProp) => {
 
   if (props.lista !== undefined  && props.lista.length > 0) {
     return (

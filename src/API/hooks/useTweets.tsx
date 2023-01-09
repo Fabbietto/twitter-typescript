@@ -1,24 +1,26 @@
+import { useEffect, useState } from "react";
+import { getTweets, TypeTweet } from "../tweetAPI";
 
-import  {useEffect, useState} from "react";
-import { getTweets } from "../API/tweetAPI";
+export const useTweet = () => {
+  const [tweetList, setLista] = useState<TypeTweet[]>();
 
-export const useTweet = () =>{
-    const [tweetList, setLista] = useState();
+  useEffect(() => {
+    setLista(getTweets());
+  }, []);
 
-    useEffect(() => {
-      setLista(getTweets());
-    }, []);
-  
-    const elimina = (index) => {
+  const elimina = (index: number) => {
+    if (tweetList != undefined) {
       console.log("Tweet eliminato");
-      const temp = [...tweetList];
+      const temp:TypeTweet[] = [...tweetList];
       temp.splice(index, 1);
       setLista(temp);
-    };
-  
-    const aggiunta = () => {
+    }
+  };
+
+  const aggiunta = () => {
+    if (tweetList != undefined) {
       console.log("Tweet nuovo");
-      const temp = [...tweetList];
+      const temp:TypeTweet[] = [...tweetList];
       temp.unshift({
         //unshift mi pone il nuovo tweet davanti ai vecchi
         id: 88,
@@ -26,7 +28,7 @@ export const useTweet = () =>{
           imageUrl:
             "https://clashofclans-layouts.com/pics/th11_plans/defence/original/th11_defence_42.jpg",
           text: "Nuovo aggiornamento disponibileee!!!",
-          likes: 865145895, 
+          likes: 865145895,
           liked: false,
           views: 1547859862,
           tweetDate: new Date(),
@@ -39,21 +41,23 @@ export const useTweet = () =>{
         },
       });
       setLista(temp);
-    };
-    
-    const aggiungiLike = (index) =>{
-        console.log("like evviva");
-        const tempTweet = [...tweetList];
-        
-        if (tempTweet[index].tweetContent.liked === false) {
-          tempTweet[index].tweetContent.liked = true;
-          tempTweet[index].tweetContent.likes+=1;
-        }
-        else{
-          tempTweet[index].tweetContent.liked = false;
-          tempTweet[index].tweetContent.likes-=1;
-        }
-        setLista(tempTweet);
+    }
+  };
+
+  const aggiungiLike = (index: number) => {
+    if (tweetList != undefined) {
+      console.log("like evviva");
+      const tempTweet:TypeTweet[] = [...tweetList];
+
+      if (tempTweet[index].tweetContent.liked === false) {
+        tempTweet[index].tweetContent.liked = true;
+        tempTweet[index].tweetContent.likes += 1;
+      } else {
+        tempTweet[index].tweetContent.liked = false;
+        tempTweet[index].tweetContent.likes -= 1;
       }
-      return{aggiunta,tweetList,elimina,aggiungiLike};
-}
+      setLista(tempTweet);
+    }
+  };
+  return { aggiunta, tweetList, elimina, aggiungiLike };
+};

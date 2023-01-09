@@ -1,7 +1,19 @@
 import './User.css'
 import Avatar from "../Avatar/Avatar"
+import { TypeTweet } from '../tweetAPI'
 
-const User = (props) => {
+type usertipo = {
+  name : string;
+  nickname: string;
+  avatarUrl: string;
+}
+
+type UserProps = {
+  user:usertipo;
+}
+
+
+const User = (props:UserProps) => {
     return (
     <div className="User">
        <Avatar user = {props.user}/>

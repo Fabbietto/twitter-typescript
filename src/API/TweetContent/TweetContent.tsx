@@ -39,7 +39,8 @@ export const TweetContent = (props:TweetContentProps) => {
       <div className="Tweet-text">{props.tweetContent.text}</div>
       <div className="feedback">
         {/* <div className="Formatted-date">{formatDate(props.tweetContent.tweetDate)}</div> */}
-        <button className="likeplus" onClick={props.aggiungiLike}><AiOutlineHeart className="cuore"/></button>
+        <button className="likeplus" onClick={props.aggiungiLike}><AiOutlineHeart className="cuore"/> </button>
+        
          <div className="likes">
           <p>{props.tweetContent.likes}</p>
         </div>

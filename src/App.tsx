@@ -1,6 +1,7 @@
 import { useTweet } from "./API/hooks/useTweets";
 import TweetList from "./API/TweetList/TweetList";
 import "./App.css";
+import { Button } from '@chakra-ui/react'
 
 function App() {
 
@@ -9,12 +10,15 @@ function App() {
   return (
     <div className="App">
       <div className="bottone">
-        <button onClick={aggiunta} className="bottone-agg">
-          Aggiorna
-        </button>
-      </div>
-      <TweetList lista={tweetList} elimina={elimina} aggiungiLike={aggiungiLike}/>
+        <Button onClick={aggiunta} mt='20px' mb='20px' fontSize= '30px' bg= '#57b1e8'>
 
+  
+          Aggiorna
+        </Button>
+
+      </div>
+      <TweetList lista = {tweetList} elimina={elimina} aggiungiLike={aggiungiLike}/>
+      
     </div>
   );
 }

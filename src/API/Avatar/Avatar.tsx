@@ -1,4 +1,5 @@
 import "./Avatar.css";
+import { Image } from '@chakra-ui/react'
 
 type avatartipo = {
   name : string;
@@ -12,8 +13,7 @@ type AvatarProps = {
 
 const Avatar = (props:AvatarProps) => {
     return (
-    <img
-    className="Avatar"
+    <Image
     src={props.user.avatarUrl}
     alt={props.user.name}
   />

@@ -1,45 +1,44 @@
 
 .testoo{
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
-    align-items: center;
-    font-size: 50px;
-    color: #fff;
-    text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 20px #fff,
-    0 0 40px #fff,
-    0 0 80px #fff,
-    0 0 90px #fff,
-    0 0 100px #fff,
-    0 0 150px #fff;
-  
-  }
-  
-  .testoo span{
-    animation: flicker 1s linear ;
-  }
-  
-  .testoo .delay1{
-    animation-delay: 1.4s ;
-  }
-  .testoo .delay2{
-    animation-delay: 0.8s ;
-  }
-  .testoo .delay3{
-    animation-delay: 1.8s ;
-  }
-  
-  @keyframes flicker {
-    0%{opacity: 0;}
-    10%{opacity: 1;}
-    20%{opacity: 0;}
-    40%{opacity: 1;}
-    50%{opacity: 0;}
-    60%{opacity: 1;}
-    80%{opacity: 0;}
-    100%{opacity:  1;}
-  }
-  
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  align-items: center;
+  font-size: 50px;
+  color: #fff;
+  text-shadow:
+  0 0 5px #fff,
+  0 0 10px #fff,
+  0 0 20px #fff,
+  0 0 40px #fff,
+  0 0 80px #fff,
+  0 0 90px #fff,
+  0 0 100px #fff,
+  0 0 150px #fff;
+
+}
+
+.testoo span{
+  animation: flicker 1s linear ;
+}
+
+.testoo .delay1{
+  animation-delay: 1.4s ;
+}
+.testoo .delay2{
+  animation-delay: 0.8s ;
+}
+.testoo .delay3{
+  animation-delay: 1.8s ;
+}
+
+@keyframes flicker {
+  0%{opacity: 0;}
+  10%{opacity: 1;}
+  20%{opacity: 0;}
+  40%{opacity: 1;}
+  50%{opacity: 0;}
+  60%{opacity: 1;}
+  80%{opacity: 0;}
+  100%{opacity:  1;}
+}

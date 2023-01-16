@@ -1,6 +1,5 @@
-import './User.css'
+import '../User/User.css'
 import Avatar from "../Avatar/Avatar"
-import { TypeTweet } from '../tweetAPI'
 
 type usertipo = {
   name : string;

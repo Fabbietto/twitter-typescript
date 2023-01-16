@@ -1,28 +1,28 @@
-import React from "react";
 import Tweet from "../Tweet/Tweet";
 import { TypeTweet } from "../tweetAPI";
 import './TweetList.css'
 
 type TweetListProp = {
-  lista:TypeTweet[];
+  lista:TypeTweet[] | undefined ;
   elimina: (index: number) => void;
   aggiungiLike: (index: number) => void;
 }
 
 
-const TweetList = (props:TweetListProp) => {
 
-  if (props.lista !== undefined  && props.lista.length > 0) {
+const TweetList = ({lista, elimina, aggiungiLike}:TweetListProp) => {
+
+  if (lista !== undefined  && lista.length > 0) {
     return (
       <div className="TweetList">
-        {props.lista.map((tweet, index) => {
+        {lista.map((tweet, index) => {
            
           return (
             <Tweet
               tweet={tweet}
               key={index}
-              elimina={() => props.elimina(index)}
-              aggiungiLike={() => props.aggiungiLike(index)}
+              elimina={() => elimina(index)}
+              aggiungiLike={() => aggiungiLike(index)}
             />
           );
         })}

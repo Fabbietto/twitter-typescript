@@ -1,4 +1,4 @@
-import React, {createContext} from "react";
+import React from "react";
 
 export type TypeTweet = {
   id: number,
@@ -17,8 +17,6 @@ export type TypeTweet = {
   }
     }
 
-    const ProfileContext = React.createContext<TypeTweet>({} as TypeTweet);
-
 
 export const getTweets = () : TypeTweet[] => {
     return [
@@ -27,7 +25,7 @@ export const getTweets = () : TypeTweet[] => {
           tweetContent: {
             imageUrl: "https://www.senkyu.com/wp-content/uploads/2012/05/senkyu_japan_33.jpg",
                 text: "Il mio cuore ha saltato un battito quando ti ho vista, sei come una rosa rara in un campo di girasoli, il tuo sorriso è come un raggio di sole in una giornata nuvolosa. Non posso credere che non ti abbia mai vista prima, sei assolutamente incantevole",
-                liked: false,
+                liked: true,
                 likes: 8461,
                 views: 17855,
             tweetDate: new Date(),

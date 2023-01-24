@@ -1,33 +1,37 @@
+import { TweetContext } from "../../Context/context";
 import Tweet from "../Tweet/Tweet";
-import { TypeTweet } from "../tweetAPI";
+import {useContext} from 'react';
 import './TweetList.css'
-
+/*
 type TweetListProp = {
   lista:TypeTweet[] | undefined ;
   elimina: (index: number) => void;
   aggiungiLike: (index: number) => void;
 }
+*/
 
 
 
-const TweetList = ({lista, elimina, aggiungiLike}:TweetListProp) => {
+//const TweetList = ({lista, elimina, aggiungiLike}:TweetListProp) => {
 
-  if (lista !== undefined  && lista.length > 0) {
+
+  const TweetList = () => {
+    const {tweetLista} = useContext(TweetContext);
+  if (tweetLista !== undefined  && tweetLista.length > 0) {
     return (
       <div className="TweetList">
-        {lista.map((tweet, index) => {
+        {tweetLista.map((_, index) => {
            
           return (
             <Tweet
-              tweet={tweet}
               key={index}
-              elimina={() => elimina(index)}
-              aggiungiLike={() => aggiungiLike(index)}
+              index={index}
             />
           );
         })}
       </div>
-    )}
+    )
+  }
     else{
       return  <p className="testoo">
       Non ci s<span className="delay1">o</span>no pos
